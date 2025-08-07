@@ -1,9 +1,18 @@
+<<<<<<< HEAD
 const APIurl = `https://dummyjson.com/users`;
 
 //Traer todos los usuarios
 const getUsers = async () =>{
     try {
         return await fetch(APIurl)
+=======
+APIurl = `https://dummyjson.com/users`;
+
+//Traer todos los usuarios--> GET /api/users
+const getUsers = async () =>{
+    try {
+        await fetch(APIurl)
+>>>>>>> 208b032 (funciones para solicitudes fetch)
             .then(users => users.json());
     } catch (error) {
         return error
@@ -14,7 +23,11 @@ const getUsers = async () =>{
 const getUserByID = async (id) =>{
     try {
     
+<<<<<<< HEAD
         return await fetch(`${APIurl}/${id}`)
+=======
+        await fetch(`${APIurl}/${id}`)
+>>>>>>> 208b032 (funciones para solicitudes fetch)
             .then(user => user.json());
     } catch (error) {
         return error
@@ -27,7 +40,11 @@ const getUsersInPages = async (actualPage, cantUsers) =>{
     //-------cantUsers es la cantidad de users que quiero traer por pagina
     try {
         const params = `limit=${cantUsers}&skip=${ (actualPage-1)*cantUsers}`
+<<<<<<< HEAD
         return await fetch(`${APIurl}?${params}`)
+=======
+        await fetch(`${APIurl}?${params}`)
+>>>>>>> 208b032 (funciones para solicitudes fetch)
             .then(user => user.json());
     } catch (error) {
         return error
@@ -35,10 +52,17 @@ const getUsersInPages = async (actualPage, cantUsers) =>{
 }
 
 //Traer usuarios por nombre. 
+<<<<<<< HEAD
 const getUsersByNameInPages = async (name, actualPage, cantUsers) =>{
     try {
         const params = `search?q=${name}&limit=${cantUsers}&skip=${ (actualPage-1)*cantUsers}`
         return await fetch(`${APIurl}/${params}`)
+=======
+const getUsersByName = async (name) =>{
+    try {
+        const params = `search?q=${name}`
+        await fetch(`${APIurl}/${params}`)
+>>>>>>> 208b032 (funciones para solicitudes fetch)
             .then(user => user.json());
     } catch (error) {
         return error
@@ -49,5 +73,9 @@ export {
     getUsers,
     getUserByID,
     getUsersInPages,
+<<<<<<< HEAD
     getUsersByNameInPages
+=======
+    getUsersByName
+>>>>>>> 208b032 (funciones para solicitudes fetch)
 }
