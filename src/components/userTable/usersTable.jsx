@@ -20,7 +20,7 @@ const UsersTable = (props) => {
               <span>loading .. </span>
               :
               props.users.map(user => (
-                <UserRow user={user}/>
+                <UserRow  key={user.id} user={user}/>
               ))
           }
         </section>

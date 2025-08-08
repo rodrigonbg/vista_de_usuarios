@@ -13,7 +13,6 @@ const getUsers = async () =>{
 //Traer usuario por su ID
 const getUserByID = async (id) =>{
     try {
-    
         return await fetch(`${APIurl}/${id}`)
             .then(user => user.json());
     } catch (error) {
