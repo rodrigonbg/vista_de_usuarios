@@ -12,11 +12,10 @@
 
 .navbarLinks {
     display: flex;
-    column-gap: 30px;
+    column-gap: 15px;
     flex-direction: row;
-    justify-content:space-around;
+    justify-content:space-between;
     align-items: center;
-    flex-wrap: wrap;
     height: 100%;
     width: 100%
 }
