@@ -15,8 +15,12 @@
 }
 .nombre{
     width: 25vw;
-    
 }
+
+.nombre:hover{
+        color: rgb(52, 143, 179);
+}
+
 .email{
     width: 50vw;
     text-align: center;

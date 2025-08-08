@@ -25,6 +25,8 @@ const UsersTable = (props) => {
           }
         </section>
 
+        <span className='msg'>para ver un usuario en detalle, hacer click sobre su nombre.</span>
+
     </section>
   )
 }
