@@ -1,9 +1,9 @@
-APIurl = `https://dummyjson.com/users`;
+const APIurl = `https://dummyjson.com/users`;
 
-//Traer todos los usuarios--> GET /api/users
+//Traer todos los usuarios
 const getUsers = async () =>{
     try {
-        await fetch(APIurl)
+        return await fetch(APIurl)
             .then(users => users.json());
     } catch (error) {
         return error
@@ -14,7 +14,7 @@ const getUsers = async () =>{
 const getUserByID = async (id) =>{
     try {
     
-        await fetch(`${APIurl}/${id}`)
+        return await fetch(`${APIurl}/${id}`)
             .then(user => user.json());
     } catch (error) {
         return error
@@ -27,7 +27,7 @@ const getUsersInPages = async (actualPage, cantUsers) =>{
     //-------cantUsers es la cantidad de users que quiero traer por pagina
     try {
         const params = `limit=${cantUsers}&skip=${ (actualPage-1)*cantUsers}`
-        await fetch(`${APIurl}?${params}`)
+        return await fetch(`${APIurl}?${params}`)
             .then(user => user.json());
     } catch (error) {
         return error
@@ -35,10 +35,10 @@ const getUsersInPages = async (actualPage, cantUsers) =>{
 }
 
 //Traer usuarios por nombre. 
-const getUsersByName = async (name) =>{
+const getUsersByNameInPages = async (name, actualPage, cantUsers) =>{
     try {
-        const params = `search?q=${name}`
-        await fetch(`${APIurl}/${params}`)
+        const params = `search?q=${name}&limit=${cantUsers}&skip=${ (actualPage-1)*cantUsers}`
+        return await fetch(`${APIurl}/${params}`)
             .then(user => user.json());
     } catch (error) {
         return error
@@ -49,5 +49,5 @@ export {
     getUsers,
     getUserByID,
     getUsersInPages,
-    getUsersByName
+    getUsersByNameInPages
 }

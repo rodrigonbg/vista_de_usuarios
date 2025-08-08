@@ -1,0 +1,32 @@
+.table{
+    margin: 12px;
+}
+
+.headUserTable{
+    padding: 15px 5px;
+    font-size:medium;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    background-color: rgba(65, 65, 65, 0.979);
+    color: white;
+    text-align: center;
+    
+}
+
+.bodyUserTable{
+  padding: 0px 0px 15px 0px;
+  text-align: center;
+}
+
+
+@media (min-width:980px) {
+  .table{
+    margin: 12px 5vw;
+
+  }
+  .headUserTable {
+    font-size: large;
+    padding: 5px 5px;
+  } 
+}
