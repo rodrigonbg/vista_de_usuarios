@@ -31,6 +31,7 @@ const Users = () => {
       setUsers(data.users);
       setTotalPages(Math.ceil(data.total / cantUsers))
       setLoading(false);
+      console.log(data)
 
     }
     fetchUsers();
