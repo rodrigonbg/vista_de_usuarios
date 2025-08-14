@@ -1,10 +1,11 @@
 import React, { useEffect, useState } from 'react'
 import './UserDetail.css'
-import { useParams, Link } from 'react-router-dom';
+import { useParams, Link, useNavigate } from 'react-router-dom';
 import { getUserByID } from '../../services/users';
 
 const UserDetail = () => {
     
+    const navegate = useNavigate();
     const { id } = useParams();
     const [loading, setLoading] = useState(true);
     const [user, setUser] = useState(null);
@@ -48,7 +49,7 @@ const UserDetail = () => {
                     <p><span>Color de cabello:</span> {user.hair.color}</p>
                     <p><span>Tipo de cabello:</span> {user.hair.type}</p>
 
-                    <Link className='btnAtras' to={'/Usuarios'}>Atras</Link>
+                    <button className='btnAtras' onClick={()=>{navegate(-1)}}>Atras</button>
                 </>
             }
         </div>

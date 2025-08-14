@@ -18,7 +18,7 @@ const NavBar = () => {
                             <NavLink key={'Home'} to={'/'} className={({isActive})=> `navbar_item ${isActive ? "selected" : ""}` }> {'Home'} </NavLink>
                         </div>    
                         <div>
-                            <NavLink key={'Usuarios'} to={'/Usuarios'} className={({isActive})=> `navbar_item ${isActive ? "selected" : ""}` }> {'Usuarios'} </NavLink>
+                            <NavLink key={'Usuarios'} to={'/Usuarios/1'} className={({isActive})=> `navbar_item ${isActive ? "selected" : ""}` }> {'Usuarios'} </NavLink>
                         </div>    
                         <div>
                             <NavLink key={'Sobre Nosotros'} to={'/Sobre_Nosotros'} className={({isActive})=> `navbar_item ${isActive ? "selected" : ""}` }> {'Sobre Nosotros'} </NavLink>
